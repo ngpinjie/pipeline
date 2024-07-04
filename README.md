@@ -56,5 +56,31 @@ python scripts/transform_data.py
 python scripts/load_to_mysql.py
 ```
 
+5. Analyze the data using Watsonx.data:
+```
+Use Watsonx.data for advanced data analytics on the ingested and transformed data.
+Watsonx.data can be integrated with Spark to perform complex queries and analytics on the dataset.
+```
+
+## Project Workflow
+1. Data Ingestion:
+Fetch data using the Alpha Vantage API for ETFs and the FRED API for economic indicators.
+Save raw data as CSV files using Pandas.
+
+2. Data Transformation:
+Perform initial data cleaning and exploration with Pandas.
+Use Apache Spark for distributed data processing and complex transformations.
+
+3. Data Storage:
+Load transformed data into MySQL for persistent storage.
+
+4. Data Analysis:
+Use Watsonx.data for advanced analytics and insights on the stored data.
+Watsonx.data provides capabilities for managing the data lifecycle and performing complex analytical tasks.
+
+5. Deployment and Management:
+Containerize the pipeline using Docker.
+Deploy and manage the pipeline on OpenShift Container Platform (OCP).
+
 ## License
 This project is licensed under the MIT License.
