@@ -1,0 +1,6 @@
+pandas
+requests
+pyspark
+mysql-connector-python
+matplotlib
+jupyterlab
