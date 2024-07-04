@@ -21,7 +21,7 @@ This project builds a real-time data pipeline to gather and analyze data on the 
 ## Setup
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/real-time-financial-data-pipeline.git
+git clone https://github.com/ngpinjie/real-time-financial-data-pipeline.git
 cd real-time-financial-data-pipeline
 ```
 
