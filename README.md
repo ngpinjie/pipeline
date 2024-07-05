@@ -72,14 +72,18 @@ Watsonx.data can be integrated with Spark to perform complex queries and analyti
 **Data Ingestion:**
 - Fetch data using the Alpha Vantage API for ETFs and the FRED API for economic indicators.
 - Use Apache Kafka to stream the data in real-time. Save raw data as CSV files using Pandas.
+
 **Data Transformation:**
 - Perform initial data cleaning and exploration with Pandas.
 - Use Apache Spark for distributed data processing and complex transformations.
+
 **Data Storage:**
 - Load transformed data into MySQL for persistent storage.
+
 **Data Analysis:**
 - Use Watsonx.data for advanced analytics and insights on the stored data.
 - Watsonx.data provides capabilities for managing the data lifecycle and performing complex analytical tasks.
+
 **Deployment and Management:**
 - Containerize the pipeline using Docker.
 - Deploy and manage the pipeline on OpenShift Container Platform (OCP).
