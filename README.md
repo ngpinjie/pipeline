@@ -1,10 +1,11 @@
 # Real-Time Financial Data Pipeline
 
 ## Overview
-This project builds a real-time data pipeline to gather and analyze data on the top three low-expense S&P 500 ETFs and the top three economic indicators. It uses Watsonx.data, Apache Spark, Pandas, MySQL, and OpenShift Container Platform (OCP) for an end-to-end solution.
+This project builds a real-time data pipeline to gather and analyze data on the top three low-expense S&P 500 ETFs and the top three economic indicators. It uses Apache Kafka, Watsonx.data, Apache Spark, Pandas, MySQL, and OpenShift Container Platform (OCP) for an end-to-end solution.
 
 ## Tools and Technologies
 - **Watsonx.data**: For managing and analyzing data.
+- **Apache Kafka**: For real-time data streaming and ingestion.
 - **Apache Spark**: For distributed data processing.
 - **Pandas**: For initial data exploration and transformation.
 - **MySQL**: As the target database for storing processed data.
@@ -46,37 +47,42 @@ python scripts/ingest_etfs.py
 python scripts/ingest_economic_indicators.py
 ```
 
-3. Transform the data:
+3. Run the Kafka producer script for real-time ingestion:
+```
+python scripts/kafka_producer.py
+```
+
+4. Transform the data:
 ```
 python scripts/transform_data.py
 ```
 
-4. Load the data into MySQL:
+5. Load the data into MySQL:
 ```
 python scripts/load_to_mysql.py
 ```
 
-5. Analyze the data using Watsonx.data:
+6. Analyze the data using Watsonx.data:
 ```
 Use Watsonx.data for advanced data analytics on the ingested and transformed data.
 Watsonx.data can be integrated with Spark to perform complex queries and analytics on the dataset.
 ```
 
 ## Project Workflow
-- **1. Data Ingestion:**
-Fetch data using the Alpha Vantage API for ETFs and the FRED API for economic indicators.
-Save raw data as CSV files using Pandas.
-- **2. Data Transformation:**
-Perform initial data cleaning and exploration with Pandas.
-Use Apache Spark for distributed data processing and complex transformations.
-- **3. Data Storage:**
-Load transformed data into MySQL for persistent storage.
-- **4. Data Analysis:**
-Use Watsonx.data for advanced analytics and insights on the stored data.
-Watsonx.data provides capabilities for managing the data lifecycle and performing complex analytical tasks.
-- **5. Deployment and Management:**
-Containerize the pipeline using Docker.
-Deploy and manage the pipeline on OpenShift Container Platform (OCP).
+**Data Ingestion:**
+- Fetch data using the Alpha Vantage API for ETFs and the FRED API for economic indicators.
+- Use Apache Kafka to stream the data in real-time. Save raw data as CSV files using Pandas.
+**Data Transformation:**
+- Perform initial data cleaning and exploration with Pandas.
+- Use Apache Spark for distributed data processing and complex transformations.
+**Data Storage:**
+- Load transformed data into MySQL for persistent storage.
+**Data Analysis:**
+- Use Watsonx.data for advanced analytics and insights on the stored data.
+- Watsonx.data provides capabilities for managing the data lifecycle and performing complex analytical tasks.
+**Deployment and Management:**
+- Containerize the pipeline using Docker.
+- Deploy and manage the pipeline on OpenShift Container Platform (OCP).
 
 ## License
 This project is licensed under the MIT License.
